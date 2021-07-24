@@ -15,7 +15,7 @@ final class HiddenImageViewController: UIViewController {
     init(image: UIImage) {
         print("INIT HiddenImageViewController")
         imageView = UIImageView(image: image)
-        imageView.contentMode = .scaleToFill
+        imageView.contentMode = .scaleAspectFit
 
         super.init(nibName: nil, bundle: nil)
     }
@@ -26,6 +26,7 @@ final class HiddenImageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
     }
 
     private func setup() {

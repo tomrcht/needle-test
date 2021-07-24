@@ -15,8 +15,14 @@ final class ImageViewController: UIViewController {
         return imgView
     }()
 
-    init() {
+    // ⚠️ Probably the worst thing to do but I have no idea
+    // on how to handle navigation right now. A Router class would be nice
+    private let component: ImageComponent
+
+    init(component: ImageComponent) {
         print("INIT ImageViewController")
+
+        self.component = component
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -48,7 +54,7 @@ final class ImageViewController: UIViewController {
     private func onTap(_ sender: UITapGestureRecognizer) {
         let tapLocation = sender.location(in: imageView)
         if tapLocation.x < 150 && tapLocation.y < 200 {
-            print("!")
+            navigationController?.pushViewController(component.hiddenImageViewController, animated: true)
         }
     }
 
