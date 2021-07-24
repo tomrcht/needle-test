@@ -115,9 +115,8 @@
 		E28D0FAA26AC181300D178D7 /* needle-test */ = {
 			isa = PBXGroup;
 			children = (
+				E28D0FF826AC47BA00D178D7 /* Components */,
 				E28D0FEE26AC285700D178D7 /* Views */,
-				E28D0FE626AC19FF00D178D7 /* DI */,
-				E28D0FE026AC188900D178D7 /* ViewControllers */,
 				E28D0FDF26AC188200D178D7 /* Generated */,
 				E28D0FAB26AC181300D178D7 /* AppDelegate.swift */,
 				E28D0FAD26AC181300D178D7 /* SceneDelegate.swift */,
@@ -152,33 +151,50 @@
 			path = Generated;
 			sourceTree = "<group>";
 		};
-		E28D0FE026AC188900D178D7 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				E28D0FAF26AC181300D178D7 /* RootViewController.swift */,
-				E28D0FE226AC197800D178D7 /* SquareViewController.swift */,
-				E28D0FE426AC19B100D178D7 /* ImageViewController.swift */,
-				E28D0FF626AC3C5600D178D7 /* HiddenImageViewController.swift */,
-			);
-			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		E28D0FE626AC19FF00D178D7 /* DI */ = {
-			isa = PBXGroup;
-			children = (
-				E28D0FE726AC1C5900D178D7 /* RootComponent.swift */,
-				E28D0FE926AC1D0100D178D7 /* SquareComponent.swift */,
-				E28D0FF426AC383700D178D7 /* ImageComponent.swift */,
-			);
-			path = DI;
-			sourceTree = "<group>";
-		};
 		E28D0FEE26AC285700D178D7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				E28D0FEF26AC286700D178D7 /* SquareView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		E28D0FF826AC47BA00D178D7 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E28D0FFB26AC47C900D178D7 /* Image */,
+				E28D0FFA26AC47C400D178D7 /* Square */,
+				E28D0FF926AC47C000D178D7 /* Root */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		E28D0FF926AC47C000D178D7 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				E28D0FE726AC1C5900D178D7 /* RootComponent.swift */,
+				E28D0FAF26AC181300D178D7 /* RootViewController.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		E28D0FFA26AC47C400D178D7 /* Square */ = {
+			isa = PBXGroup;
+			children = (
+				E28D0FE926AC1D0100D178D7 /* SquareComponent.swift */,
+				E28D0FE226AC197800D178D7 /* SquareViewController.swift */,
+			);
+			path = Square;
+			sourceTree = "<group>";
+		};
+		E28D0FFB26AC47C900D178D7 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				E28D0FF426AC383700D178D7 /* ImageComponent.swift */,
+				E28D0FE426AC19B100D178D7 /* ImageViewController.swift */,
+				E28D0FF626AC3C5600D178D7 /* HiddenImageViewController.swift */,
+			);
+			path = Image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
