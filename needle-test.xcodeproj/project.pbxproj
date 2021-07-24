@@ -9,12 +9,21 @@
 /* Begin PBXBuildFile section */
 		E28D0FAC26AC181300D178D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28D0FAB26AC181300D178D7 /* AppDelegate.swift */; };
 		E28D0FAE26AC181300D178D7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28D0FAD26AC181300D178D7 /* SceneDelegate.swift */; };
-		E28D0FB026AC181300D178D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28D0FAF26AC181300D178D7 /* ViewController.swift */; };
-		E28D0FB326AC181300D178D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E28D0FB126AC181300D178D7 /* Main.storyboard */; };
+		E28D0FB026AC181300D178D7 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28D0FAF26AC181300D178D7 /* RootViewController.swift */; };
 		E28D0FB526AC181400D178D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E28D0FB426AC181400D178D7 /* Assets.xcassets */; };
 		E28D0FB826AC181400D178D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E28D0FB626AC181400D178D7 /* LaunchScreen.storyboard */; };
 		E28D0FC326AC181500D178D7 /* needle_testTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28D0FC226AC181500D178D7 /* needle_testTests.swift */; };
 		E28D0FCD26AC181500D178D7 /* needle_testUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28D0FCC26AC181500D178D7 /* needle_testUITests.swift */; };
+		E28D0FDB26AC186600D178D7 /* NeedleFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = E28D0FDA26AC186600D178D7 /* NeedleFoundation */; };
+		E28D0FDE26AC187700D178D7 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E28D0FDD26AC187700D178D7 /* SnapKit */; };
+		E28D0FE326AC197800D178D7 /* SquareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28D0FE226AC197800D178D7 /* SquareViewController.swift */; };
+		E28D0FE526AC19B100D178D7 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28D0FE426AC19B100D178D7 /* ImageViewController.swift */; };
+		E28D0FE826AC1C5900D178D7 /* RootComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28D0FE726AC1C5900D178D7 /* RootComponent.swift */; };
+		E28D0FEA26AC1D0100D178D7 /* SquareComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28D0FE926AC1D0100D178D7 /* SquareComponent.swift */; };
+		E28D0FED26AC278600D178D7 /* NeedleGenerated.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28D0FEC26AC278600D178D7 /* NeedleGenerated.swift */; };
+		E28D0FF026AC286700D178D7 /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28D0FEF26AC286700D178D7 /* SquareView.swift */; };
+		E28D0FF526AC383700D178D7 /* ImageComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28D0FF426AC383700D178D7 /* ImageComponent.swift */; };
+		E28D0FF726AC3C5600D178D7 /* HiddenImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28D0FF626AC3C5600D178D7 /* HiddenImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +47,7 @@
 		E28D0FA826AC181300D178D7 /* needle-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "needle-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E28D0FAB26AC181300D178D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E28D0FAD26AC181300D178D7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E28D0FAF26AC181300D178D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E28D0FB226AC181300D178D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E28D0FAF26AC181300D178D7 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		E28D0FB426AC181400D178D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E28D0FB726AC181400D178D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E28D0FB926AC181400D178D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +55,14 @@
 		E28D0FC226AC181500D178D7 /* needle_testTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = needle_testTests.swift; sourceTree = "<group>"; };
 		E28D0FC826AC181500D178D7 /* needle-testUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "needle-testUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E28D0FCC26AC181500D178D7 /* needle_testUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = needle_testUITests.swift; sourceTree = "<group>"; };
+		E28D0FE226AC197800D178D7 /* SquareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareViewController.swift; sourceTree = "<group>"; };
+		E28D0FE426AC19B100D178D7 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		E28D0FE726AC1C5900D178D7 /* RootComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootComponent.swift; sourceTree = "<group>"; };
+		E28D0FE926AC1D0100D178D7 /* SquareComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareComponent.swift; sourceTree = "<group>"; };
+		E28D0FEC26AC278600D178D7 /* NeedleGenerated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeedleGenerated.swift; sourceTree = "<group>"; };
+		E28D0FEF26AC286700D178D7 /* SquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
+		E28D0FF426AC383700D178D7 /* ImageComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageComponent.swift; sourceTree = "<group>"; };
+		E28D0FF626AC3C5600D178D7 /* HiddenImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +70,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E28D0FDB26AC186600D178D7 /* NeedleFoundation in Frameworks */,
+				E28D0FDE26AC187700D178D7 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,10 +115,12 @@
 		E28D0FAA26AC181300D178D7 /* needle-test */ = {
 			isa = PBXGroup;
 			children = (
+				E28D0FEE26AC285700D178D7 /* Views */,
+				E28D0FE626AC19FF00D178D7 /* DI */,
+				E28D0FE026AC188900D178D7 /* ViewControllers */,
+				E28D0FDF26AC188200D178D7 /* Generated */,
 				E28D0FAB26AC181300D178D7 /* AppDelegate.swift */,
 				E28D0FAD26AC181300D178D7 /* SceneDelegate.swift */,
-				E28D0FAF26AC181300D178D7 /* ViewController.swift */,
-				E28D0FB126AC181300D178D7 /* Main.storyboard */,
 				E28D0FB426AC181400D178D7 /* Assets.xcassets */,
 				E28D0FB626AC181400D178D7 /* LaunchScreen.storyboard */,
 				E28D0FB926AC181400D178D7 /* Info.plist */,
@@ -124,6 +144,43 @@
 			path = "needle-testUITests";
 			sourceTree = "<group>";
 		};
+		E28D0FDF26AC188200D178D7 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				E28D0FEC26AC278600D178D7 /* NeedleGenerated.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		E28D0FE026AC188900D178D7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E28D0FAF26AC181300D178D7 /* RootViewController.swift */,
+				E28D0FE226AC197800D178D7 /* SquareViewController.swift */,
+				E28D0FE426AC19B100D178D7 /* ImageViewController.swift */,
+				E28D0FF626AC3C5600D178D7 /* HiddenImageViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E28D0FE626AC19FF00D178D7 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				E28D0FE726AC1C5900D178D7 /* RootComponent.swift */,
+				E28D0FE926AC1D0100D178D7 /* SquareComponent.swift */,
+				E28D0FF426AC383700D178D7 /* ImageComponent.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		E28D0FEE26AC285700D178D7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E28D0FEF26AC286700D178D7 /* SquareView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -131,6 +188,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E28D0FD026AC181500D178D7 /* Build configuration list for PBXNativeTarget "needle-test" */;
 			buildPhases = (
+				E28D0FEB26AC26E100D178D7 /* ShellScript */,
 				E28D0FA426AC181300D178D7 /* Sources */,
 				E28D0FA526AC181300D178D7 /* Frameworks */,
 				E28D0FA626AC181300D178D7 /* Resources */,
@@ -140,6 +198,10 @@
 			dependencies = (
 			);
 			name = "needle-test";
+			packageProductDependencies = (
+				E28D0FDA26AC186600D178D7 /* NeedleFoundation */,
+				E28D0FDD26AC187700D178D7 /* SnapKit */,
+			);
 			productName = "needle-test";
 			productReference = E28D0FA826AC181300D178D7 /* needle-test.app */;
 			productType = "com.apple.product-type.application";
@@ -212,6 +274,10 @@
 				Base,
 			);
 			mainGroup = E28D0F9F26AC181300D178D7;
+			packageReferences = (
+				E28D0FD926AC186600D178D7 /* XCRemoteSwiftPackageReference "needle" */,
+				E28D0FDC26AC187700D178D7 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = E28D0FA926AC181300D178D7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -230,7 +296,6 @@
 			files = (
 				E28D0FB826AC181400D178D7 /* LaunchScreen.storyboard in Resources */,
 				E28D0FB526AC181400D178D7 /* Assets.xcassets in Resources */,
-				E28D0FB326AC181300D178D7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,12 +315,40 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E28D0FEB26AC26E100D178D7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "needle generate needle-test/Generated/NeedleGenerated.swift needle-test/\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E28D0FA426AC181300D178D7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E28D0FB026AC181300D178D7 /* ViewController.swift in Sources */,
+				E28D0FB026AC181300D178D7 /* RootViewController.swift in Sources */,
+				E28D0FEA26AC1D0100D178D7 /* SquareComponent.swift in Sources */,
+				E28D0FE826AC1C5900D178D7 /* RootComponent.swift in Sources */,
+				E28D0FF526AC383700D178D7 /* ImageComponent.swift in Sources */,
+				E28D0FE326AC197800D178D7 /* SquareViewController.swift in Sources */,
+				E28D0FED26AC278600D178D7 /* NeedleGenerated.swift in Sources */,
+				E28D0FE526AC19B100D178D7 /* ImageViewController.swift in Sources */,
+				E28D0FF726AC3C5600D178D7 /* HiddenImageViewController.swift in Sources */,
+				E28D0FF026AC286700D178D7 /* SquareView.swift in Sources */,
 				E28D0FAC26AC181300D178D7 /* AppDelegate.swift in Sources */,
 				E28D0FAE26AC181300D178D7 /* SceneDelegate.swift in Sources */,
 			);
@@ -293,14 +386,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E28D0FB126AC181300D178D7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E28D0FB226AC181300D178D7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E28D0FB626AC181400D178D7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -438,9 +523,11 @@
 				DEVELOPMENT_TEAM = 75W97CWTS7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "needle-test/Info.plist";
+				INFOPLIST_KEY_CFBundleExecutable = "needle-test";
+				INFOPLIST_KEY_CFBundleName = "needle-test";
+				INFOPLIST_KEY_CFBundleVersion = 1;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -466,9 +553,11 @@
 				DEVELOPMENT_TEAM = 75W97CWTS7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "needle-test/Info.plist";
+				INFOPLIST_KEY_CFBundleExecutable = "needle-test";
+				INFOPLIST_KEY_CFBundleName = "needle-test";
+				INFOPLIST_KEY_CFBundleVersion = 1;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -620,6 +709,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E28D0FD926AC186600D178D7 /* XCRemoteSwiftPackageReference "needle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/uber/needle.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.1;
+			};
+		};
+		E28D0FDC26AC187700D178D7 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E28D0FDA26AC186600D178D7 /* NeedleFoundation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E28D0FD926AC186600D178D7 /* XCRemoteSwiftPackageReference "needle" */;
+			productName = NeedleFoundation;
+		};
+		E28D0FDD26AC187700D178D7 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E28D0FDC26AC187700D178D7 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E28D0FA026AC181300D178D7 /* Project object */;
 }
