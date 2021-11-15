@@ -15,7 +15,10 @@ final class RootComponent: BootstrapComponent {
     }
 
     var rootViewController: UIViewController {
-        RootViewController(squareBuilder: squareComponent, imageBuilder: imageComponent)
+        RootViewController(
+            squareBuilder: squareComponent,
+            imageBuilder: imageComponent,
+            simpleBuilder: simpleComponent)
     }
 
     var squareComponent: SquareComponent {
@@ -24,5 +27,9 @@ final class RootComponent: BootstrapComponent {
 
     var imageComponent: ImageComponent {
         ImageComponent(parent: self)
+    }
+
+    var simpleComponent: SimpleComponent {
+        SimpleComponent(parent: self)
     }
 }

@@ -16,7 +16,7 @@ protocol ImageBuilder {
 
 final class ImageComponent: Component<EmptyDependency>, ImageBuilder {
     var imageViewController: UIViewController {
-        ImageViewController(component: self)
+        ImageViewController(imageBuilder: self)
     }
 
     var hiddenImageViewController: UIViewController {

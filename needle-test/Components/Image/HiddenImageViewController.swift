@@ -36,6 +36,15 @@ final class HiddenImageViewController: UIViewController {
         imageView.snp.makeConstraints { make in
             make.top.bottom.leading.trailing.equalToSuperview()
         }
+        imageView.isUserInteractionEnabled = true
+
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(back))
+        imageView.addGestureRecognizer(tapGesture)
+    }
+
+    @objc
+    private func back() {
+        navigationController?.popViewController(animated: true)
     }
 
     deinit { print("DEINIT \(self)") }

@@ -2,7 +2,7 @@
   "object": {
     "pins": [
       {
-        "package": "needle",
+        "package": "NeedleFoundation",
         "repositoryURL": "https://github.com/uber/needle.git",
         "state": {
           "branch": null,

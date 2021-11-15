@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E206C880274193FD006AA00E /* SimpleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E206C87F274193FD006AA00E /* SimpleComponent.swift */; };
 		E28D0FAC26AC181300D178D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28D0FAB26AC181300D178D7 /* AppDelegate.swift */; };
 		E28D0FAE26AC181300D178D7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28D0FAD26AC181300D178D7 /* SceneDelegate.swift */; };
 		E28D0FB026AC181300D178D7 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28D0FAF26AC181300D178D7 /* RootViewController.swift */; };
@@ -24,6 +25,10 @@
 		E28D0FF026AC286700D178D7 /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28D0FEF26AC286700D178D7 /* SquareView.swift */; };
 		E28D0FF526AC383700D178D7 /* ImageComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28D0FF426AC383700D178D7 /* ImageComponent.swift */; };
 		E28D0FF726AC3C5600D178D7 /* HiddenImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28D0FF626AC3C5600D178D7 /* HiddenImageViewController.swift */; };
+		E2A283DB27429CF900BB99D1 /* SimpleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A283DA27429CF900BB99D1 /* SimpleViewController.swift */; };
+		E2A283DD2742A1EC00BB99D1 /* ConnectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A283DC2742A1EC00BB99D1 /* ConnectedViewController.swift */; };
+		E2A283DF2742A1F800BB99D1 /* ConnectedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A283DE2742A1F800BB99D1 /* ConnectedViewModel.swift */; };
+		E2A283E12742ACFB00BB99D1 /* SimpleSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A283E02742ACFB00BB99D1 /* SimpleSecondViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E206C87F274193FD006AA00E /* SimpleComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleComponent.swift; sourceTree = "<group>"; };
 		E28D0FA826AC181300D178D7 /* needle-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "needle-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E28D0FAB26AC181300D178D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E28D0FAD26AC181300D178D7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +69,10 @@
 		E28D0FEF26AC286700D178D7 /* SquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
 		E28D0FF426AC383700D178D7 /* ImageComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageComponent.swift; sourceTree = "<group>"; };
 		E28D0FF626AC3C5600D178D7 /* HiddenImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenImageViewController.swift; sourceTree = "<group>"; };
+		E2A283DA27429CF900BB99D1 /* SimpleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleViewController.swift; sourceTree = "<group>"; };
+		E2A283DC2742A1EC00BB99D1 /* ConnectedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectedViewController.swift; sourceTree = "<group>"; };
+		E2A283DE2742A1F800BB99D1 /* ConnectedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectedViewModel.swift; sourceTree = "<group>"; };
+		E2A283E02742ACFB00BB99D1 /* SimpleSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleSecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +102,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E206C87E274193ED006AA00E /* SimpleMVVM */ = {
+			isa = PBXGroup;
+			children = (
+				E2A283D927429CEC00BB99D1 /* Supporting */,
+				E206C87F274193FD006AA00E /* SimpleComponent.swift */,
+				E2A283DA27429CF900BB99D1 /* SimpleViewController.swift */,
+				E2A283E02742ACFB00BB99D1 /* SimpleSecondViewController.swift */,
+			);
+			path = SimpleMVVM;
+			sourceTree = "<group>";
+		};
 		E28D0F9F26AC181300D178D7 = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +183,7 @@
 		E28D0FF826AC47BA00D178D7 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				E206C87E274193ED006AA00E /* SimpleMVVM */,
 				E28D0FFB26AC47C900D178D7 /* Image */,
 				E28D0FFA26AC47C400D178D7 /* Square */,
 				E28D0FF926AC47C000D178D7 /* Root */,
@@ -195,6 +217,15 @@
 				E28D0FF626AC3C5600D178D7 /* HiddenImageViewController.swift */,
 			);
 			path = Image;
+			sourceTree = "<group>";
+		};
+		E2A283D927429CEC00BB99D1 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				E2A283DC2742A1EC00BB99D1 /* ConnectedViewController.swift */,
+				E2A283DE2742A1F800BB99D1 /* ConnectedViewModel.swift */,
+			);
+			path = Supporting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -356,8 +387,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2A283E12742ACFB00BB99D1 /* SimpleSecondViewController.swift in Sources */,
+				E2A283DD2742A1EC00BB99D1 /* ConnectedViewController.swift in Sources */,
+				E2A283DB27429CF900BB99D1 /* SimpleViewController.swift in Sources */,
 				E28D0FB026AC181300D178D7 /* RootViewController.swift in Sources */,
 				E28D0FEA26AC1D0100D178D7 /* SquareComponent.swift in Sources */,
+				E2A283DF2742A1F800BB99D1 /* ConnectedViewModel.swift in Sources */,
 				E28D0FE826AC1C5900D178D7 /* RootComponent.swift in Sources */,
 				E28D0FF526AC383700D178D7 /* ImageComponent.swift in Sources */,
 				E28D0FE326AC197800D178D7 /* SquareViewController.swift in Sources */,
@@ -365,6 +400,7 @@
 				E28D0FE526AC19B100D178D7 /* ImageViewController.swift in Sources */,
 				E28D0FF726AC3C5600D178D7 /* HiddenImageViewController.swift in Sources */,
 				E28D0FF026AC286700D178D7 /* SquareView.swift in Sources */,
+				E206C880274193FD006AA00E /* SimpleComponent.swift in Sources */,
 				E28D0FAC26AC181300D178D7 /* AppDelegate.swift in Sources */,
 				E28D0FAE26AC181300D178D7 /* SceneDelegate.swift in Sources */,
 			);

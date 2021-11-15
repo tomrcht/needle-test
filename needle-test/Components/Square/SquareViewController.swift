@@ -12,9 +12,9 @@ final class SquareViewController: UIViewController {
 
     // MARK: - Lifecycle
     init(initialColor: UIColor) {
-        print("INIT SquareViewController")
         self.initialColor = initialColor
         super.init(nibName: nil, bundle: nil)
+        print("INIT \(self)")
     }
 
     required init?(coder: NSCoder) {
