@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import Combine
 
-final class SimpleSecondViewController: UIViewController {
+final class SimpleSecondViewController: UIViewController, ConnectedViewController {
     // MARK: - UI
     private lazy var label: UILabel = {
         let lbl = UILabel()
@@ -17,14 +18,24 @@ final class SimpleSecondViewController: UIViewController {
         return lbl
     }()
 
+    // MARK: - ViewModel
+    let viewModel: SimpleSecondViewModel
+    var bag = Set<AnyCancellable>()
+
     // MARK: - Lifecycle
-    convenience init() {
-        self.init(nibName: nil, bundle: nil)
-        print("INIT \(self)")
+    init(viewModel: SimpleSecondViewModel) {
+        self.viewModel = viewModel
+
+        super.init(nibName: nil, bundle: nil)
+        print("🟢 INIT \(self)")
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError()
     }
 
     deinit {
-        print("DEINIT \(self)")
+        print("🔴 DEINIT \(self)")
     }
 
     override func viewDidLoad() {
@@ -35,5 +46,24 @@ final class SimpleSecondViewController: UIViewController {
         label.snp.makeConstraints { make in
             make.center.equalToSuperview()
         }
+
+        bindViewModel()
     }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        bindViewModel()
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        for cancellable in bag { cancellable.cancel() }
+        bag.removeAll()
+    }
+
+    func bindViewModel() {
+        viewModel.router.sink(receiveValue: onRouterEvent).store(in: &bag)
+    }
+
+    func onRouterEvent(_ event: RouterEvent) { }
 }

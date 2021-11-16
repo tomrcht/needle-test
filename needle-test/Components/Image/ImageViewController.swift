@@ -20,7 +20,6 @@ final class ImageViewController: UIViewController {
     init(imageBuilder: ImageBuilder) {
         self.imageBuilder = imageBuilder
         super.init(nibName: nil, bundle: nil)
-        print("INIT \(self)")
     }
 
     required init?(coder: NSCoder) {
@@ -54,6 +53,4 @@ final class ImageViewController: UIViewController {
             navigationController?.pushViewController(imageBuilder.hiddenImageViewController, animated: true)
         }
     }
-
-    deinit { print("DEINIT \(self)") }
 }

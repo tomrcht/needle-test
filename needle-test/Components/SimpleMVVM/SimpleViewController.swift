@@ -7,8 +7,9 @@
 
 import UIKit
 import SnapKit
+import Combine
 
-final class SimpleViewController: UIViewController {
+final class SimpleViewController: UIViewController, ConnectedViewController {
     // MARK: - UI
     private lazy var navigationButton: UIButton = {
         let btn = UIButton()
@@ -18,14 +19,24 @@ final class SimpleViewController: UIViewController {
         return btn
     }()
 
+    // MARK: - ViewModel
+    let viewModel: SimpleViewModel
+    var bag = Set<AnyCancellable>()
+
     // MARK: - Lifecycle
-    convenience init() {
-        self.init(nibName: nil, bundle: nil)
-        print("INIT \(self)")
+    init(viewModel: SimpleViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+
+        print("🟢 INIT \(self)")
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError()
     }
 
     deinit {
-        print("DEINIT \(self)")
+        print("🔴 DEINIT \(self)")
     }
 
     override func viewDidLoad() {
@@ -36,12 +47,23 @@ final class SimpleViewController: UIViewController {
         navigationButton.snp.makeConstraints { make in
             make.center.equalToSuperview()
         }
+
+        bindViewModel()
+    }
+
+    func bindViewModel() {
+        viewModel.router.sink(receiveValue: onRouterEvent).store(in: &bag)
     }
 
     // MARK: - Actions
     @objc
     private func moveToSecondVC() {
-        let vc = SimpleSecondViewController()
-        navigationController?.pushViewController(vc, animated: true)
+        viewModel.pushSecond()
+    }
+
+    func onRouterEvent(_ event: RouterEvent) {
+        if case let .push(vc) = event {
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }

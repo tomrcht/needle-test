@@ -16,10 +16,18 @@ protocol SimpleBuilder {
 
 final class SimpleComponent: Component<EmptyDependency>, SimpleBuilder {
     var simpleViewController: UIViewController {
-        SimpleViewController()
+        SimpleViewController(viewModel: simpleViewModel)
+    }
+
+    var simpleViewModel: SimpleViewModel {
+        SimpleViewModel(builder: self)
     }
 
     var simpleSecondViewController: UIViewController {
-        SimpleSecondViewController()
+        SimpleSecondViewController(viewModel: simpleSecondViewModel)
+    }
+
+    var simpleSecondViewModel: SimpleSecondViewModel {
+        SimpleSecondViewModel(builder: self)
     }
 }

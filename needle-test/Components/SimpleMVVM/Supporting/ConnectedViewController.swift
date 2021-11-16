@@ -6,3 +6,20 @@
 //
 
 import Foundation
+import Combine
+
+protocol ConnectedViewController {
+    associatedtype AnyViewModel: ConnectedViewModel
+
+    /// The view model associates to this view controller
+    var viewModel: AnyViewModel { get }
+    var bag: Set<AnyCancellable> { get set }
+
+    init(viewModel: AnyViewModel)
+
+    /// Bind the view controller and it's view model
+    func bindViewModel()
+
+    /// React to any router event dispatched by the view model
+    func onRouterEvent(_ event: RouterEvent)
+}

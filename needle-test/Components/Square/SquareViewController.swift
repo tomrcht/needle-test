@@ -14,7 +14,6 @@ final class SquareViewController: UIViewController {
     init(initialColor: UIColor) {
         self.initialColor = initialColor
         super.init(nibName: nil, bundle: nil)
-        print("INIT \(self)")
     }
 
     required init?(coder: NSCoder) {
@@ -34,6 +33,4 @@ final class SquareViewController: UIViewController {
         squareView.center = view.center
         view.addSubview(squareView)
     }
-
-    deinit { print("DEINIT \(self)") }
 }

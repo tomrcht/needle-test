@@ -11,7 +11,6 @@ final class RootViewController: UITabBarController {
     // MARK: - Lifecycle
     init(squareBuilder: SquareBuilder, imageBuilder: ImageBuilder, simpleBuilder: SimpleBuilder) {
         super.init(nibName: nil, bundle: nil)
-        print("INIT \(self)")
 
         let squareVC = squareBuilder.squareViewController
         squareVC.tabBarItem = UITabBarItem(
@@ -51,6 +50,4 @@ final class RootViewController: UITabBarController {
         tabBar.isTranslucent = true
         tabBar.tintColor = .systemRed
     }
-
-    deinit { print("DEINIT \(self)") }
 }
