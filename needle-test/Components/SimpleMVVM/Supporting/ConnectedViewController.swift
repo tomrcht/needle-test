@@ -19,6 +19,8 @@ protocol ConnectedViewController {
 
     /// Bind the view controller and it's view model
     func bindViewModel()
+    /// Teardown the current view controller
+    func dispose()
 
     /// React to any router event dispatched by the view model
     func onRouterEvent(_ event: RouterEvent)

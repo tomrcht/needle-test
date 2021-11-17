@@ -50,6 +50,10 @@ final class SimpleSecondViewController: UIViewController, ConnectedViewControlle
         bindViewModel()
     }
 
+    func bindViewModel() {
+        viewModel.router.sink(receiveValue: onRouterEvent).store(in: &bag)
+    }
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         bindViewModel()
@@ -57,12 +61,11 @@ final class SimpleSecondViewController: UIViewController, ConnectedViewControlle
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        for cancellable in bag { cancellable.cancel() }
-        bag.removeAll()
     }
 
-    func bindViewModel() {
-        viewModel.router.sink(receiveValue: onRouterEvent).store(in: &bag)
+    func dispose() {
+        bag.dispose()
+        viewModel.dispose()
     }
 
     func onRouterEvent(_ event: RouterEvent) { }

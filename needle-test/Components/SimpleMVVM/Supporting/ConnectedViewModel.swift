@@ -11,12 +11,16 @@ import Combine
 protocol ConnectedViewModel {
     associatedtype AnyBuilder
 
+    /// Needle's component providing available view controllers / services
     var builder: AnyBuilder { get }
-
+    /// Dispose bag that handles this view model's subscriptions
     var bag: Set<AnyCancellable> { get set }
+    /// Subject that dispatch router events to the associated view controller
+    /// The view controller handles this event how it sees fit
     var router: PassthroughSubject<RouterEvent, Never> { get }
+    /// Handles lifecycle events to ensure proper init or teardown when necessary
+//    var lifecycle: PassthroughSubject<LifecycleEvent, Never> { get }
 
-    /// This func should handle the teardown of the view model, such as cancelling subjects or releasing any ressources
-    /// that can be disposed of
+    /// Teardown the current view model
     mutating func dispose()
 }

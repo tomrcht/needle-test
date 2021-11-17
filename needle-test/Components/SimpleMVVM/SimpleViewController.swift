@@ -51,19 +51,29 @@ final class SimpleViewController: UIViewController, ConnectedViewController {
         bindViewModel()
     }
 
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        dispose()
+    }
+
     func bindViewModel() {
         viewModel.router.sink(receiveValue: onRouterEvent).store(in: &bag)
     }
 
-    // MARK: - Actions
-    @objc
-    private func moveToSecondVC() {
-        viewModel.pushSecond()
+    func dispose() {
+        bag.dispose()
+        viewModel.dispose()
     }
 
     func onRouterEvent(_ event: RouterEvent) {
         if case let .push(vc) = event {
             navigationController?.pushViewController(vc, animated: true)
         }
+    }
+
+    // MARK: - Actions
+    @objc
+    private func moveToSecondVC() {
+        viewModel.pushSecond()
     }
 }

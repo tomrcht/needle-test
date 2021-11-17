@@ -9,18 +9,23 @@ import Foundation
 import Combine
 import UIKit
 
-struct SimpleViewModel: ConnectedViewModel {
+final class SimpleViewModel: ConnectedViewModel {
     let builder: SimpleBuilder
 
     var bag = Set<AnyCancellable>()
     let router = PassthroughSubject<RouterEvent, Never>()
+//    let lifecycle = PassthroughSubject<LifecycleEvent, Never>()
+
+    init(builder: SimpleBuilder) {
+        self.builder = builder
+    }
 
     func pushSecond() {
         let vc = builder.simpleSecondViewController
         router.send(.push(vc))
     }
 
-    mutating func dispose() {
+    func dispose() {
         bag.forEach { $0.cancel() }
         bag.removeAll()
     }

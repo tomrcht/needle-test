@@ -10,5 +10,7 @@ import UIKit
 
 enum RouterEvent {
     case push(UIViewController)
+    case present(UIViewController)
     case pop
+    case dismiss
 }
