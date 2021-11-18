@@ -9,15 +9,19 @@ import Foundation
 import Combine
 import UIKit
 
-final class SimpleViewModel: ConnectedViewModel {
+final class SimpleViewModel: ConnectedViewModel, RoutingViewModel {
     let builder: SimpleBuilder
 
     var bag = Set<AnyCancellable>()
     let router = PassthroughSubject<RouterEvent, Never>()
-//    let lifecycle = PassthroughSubject<LifecycleEvent, Never>()
 
     init(builder: SimpleBuilder) {
         self.builder = builder
+        print("🟢 INIT \(self)")
+    }
+
+    deinit {
+        print("🔴 DEINIT \(self)")
     }
 
     func pushSecond() {
@@ -26,7 +30,6 @@ final class SimpleViewModel: ConnectedViewModel {
     }
 
     func dispose() {
-        bag.forEach { $0.cancel() }
-        bag.removeAll()
+        bag.dispose()
     }
 }

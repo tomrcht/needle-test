@@ -7,18 +7,43 @@
 
 import Foundation
 import Combine
+import UIKit
 
 final class SimpleSecondViewModel: ConnectedViewModel {
-    let builder: SimpleBuilder
+    let currentColor = CurrentValueSubject<UIColor, Never>(.black)
 
+    let builder: SimpleBuilder
     var bag = Set<AnyCancellable>()
-    let router = PassthroughSubject<RouterEvent, Never>()
+
+    private var currentColorIndex = 0
+    private let colors: [UIColor] = [
+        .systemMint,
+        .systemRed,
+        .systemCyan,
+        .systemPink,
+        .systemPurple,
+    ]
 
     init(builder: SimpleBuilder) {
         self.builder = builder
+        print("🟢 INIT \(self)")
+    }
+
+    deinit {
+        print("🔴 DEINIT \(self)")
     }
 
     func dispose() {
         bag.dispose()
+    }
+
+    func changeColor() {
+        if currentColorIndex >= colors.count {
+            currentColorIndex = 0
+        }
+
+        let newColor = colors[currentColorIndex]
+        currentColor.send(newColor)
+        currentColorIndex += 1
     }
 }

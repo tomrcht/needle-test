@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9284A3A727450E84001F9BCC /* LifecycleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9284A3A627450E84001F9BCC /* LifecycleEvent.swift */; };
 		92BA284E27454C1300267A5B /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BA284D27454C1300267A5B /* Set.swift */; };
 		E206C880274193FD006AA00E /* SimpleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E206C87F274193FD006AA00E /* SimpleComponent.swift */; };
 		E222BF932743EE320023EB61 /* SimpleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E222BF922743EE320023EB61 /* SimpleViewModel.swift */; };
@@ -54,7 +53,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9284A3A627450E84001F9BCC /* LifecycleEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifecycleEvent.swift; sourceTree = "<group>"; };
 		92BA284D27454C1300267A5B /* Set.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
 		E206C87F274193FD006AA00E /* SimpleComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleComponent.swift; sourceTree = "<group>"; };
 		E222BF922743EE320023EB61 /* SimpleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleViewModel.swift; sourceTree = "<group>"; };
@@ -254,7 +252,6 @@
 				E2A283DC2742A1EC00BB99D1 /* ConnectedViewController.swift */,
 				E2A283DE2742A1F800BB99D1 /* ConnectedViewModel.swift */,
 				E222BF9627441B5F0023EB61 /* RouterEvent.swift */,
-				9284A3A627450E84001F9BCC /* LifecycleEvent.swift */,
 			);
 			path = Supporting;
 			sourceTree = "<group>";
@@ -423,7 +420,6 @@
 				E2A283DB27429CF900BB99D1 /* SimpleViewController.swift in Sources */,
 				E28D0FB026AC181300D178D7 /* RootViewController.swift in Sources */,
 				E28D0FEA26AC1D0100D178D7 /* SquareComponent.swift in Sources */,
-				9284A3A727450E84001F9BCC /* LifecycleEvent.swift in Sources */,
 				E2A283DF2742A1F800BB99D1 /* ConnectedViewModel.swift in Sources */,
 				E28D0FE826AC1C5900D178D7 /* RootComponent.swift in Sources */,
 				E28D0FF526AC383700D178D7 /* ImageComponent.swift in Sources */,

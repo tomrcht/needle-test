@@ -15,12 +15,13 @@ protocol ConnectedViewModel {
     var builder: AnyBuilder { get }
     /// Dispose bag that handles this view model's subscriptions
     var bag: Set<AnyCancellable> { get set }
+
+    /// Teardown the current view model
+    func dispose()
+}
+
+protocol RoutingViewModel {
     /// Subject that dispatch router events to the associated view controller
     /// The view controller handles this event how it sees fit
     var router: PassthroughSubject<RouterEvent, Never> { get }
-    /// Handles lifecycle events to ensure proper init or teardown when necessary
-//    var lifecycle: PassthroughSubject<LifecycleEvent, Never> { get }
-
-    /// Teardown the current view model
-    mutating func dispose()
 }

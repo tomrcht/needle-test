@@ -10,12 +10,17 @@ import Combine
 
 final class SimpleSecondViewController: UIViewController, ConnectedViewController {
     // MARK: - UI
-    private lazy var label: UILabel = {
-        let lbl = UILabel()
-        lbl.text = "Hi!"
-        lbl.textColor = .black
-        lbl.font = .systemFont(ofSize: 24, weight: .light)
-        return lbl
+    private lazy var colorButton: UIButton = {
+        let btn = UIButton()
+        btn.setTitle("Change color !", for: .normal)
+        btn.setTitleColor(.systemPink, for: .normal)
+        btn.addTarget(self, action: #selector(changeColor), for: .touchUpInside)
+        return btn
+    }()
+    private lazy var square: UIView = {
+        let square = UIView(frame: .zero)
+        square.backgroundColor = .black
+        return square
     }()
 
     // MARK: - ViewModel
@@ -42,16 +47,18 @@ final class SimpleSecondViewController: UIViewController, ConnectedViewControlle
         super.viewDidLoad()
 
         view.backgroundColor = .white
-        view.addSubview(label)
-        label.snp.makeConstraints { make in
+
+        view.addSubview(colorButton)
+        colorButton.snp.makeConstraints { make in
             make.center.equalToSuperview()
         }
 
-        bindViewModel()
-    }
-
-    func bindViewModel() {
-        viewModel.router.sink(receiveValue: onRouterEvent).store(in: &bag)
+        view.addSubview(square)
+        square.snp.makeConstraints { make in
+            make.width.height.equalTo(100)
+            make.centerX.equalToSuperview()
+            make.top.equalTo(colorButton.snp.bottom).offset(16)
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -61,6 +68,16 @@ final class SimpleSecondViewController: UIViewController, ConnectedViewControlle
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
+        viewModel.dispose()
+    }
+
+    func bindViewModel() {
+        viewModel.currentColor
+            .sink { [unowned self] newColor in
+                print("newColor: \(newColor)")
+                self.square.backgroundColor = newColor
+            }
+            .store(in: &bag)
     }
 
     func dispose() {
@@ -68,5 +85,9 @@ final class SimpleSecondViewController: UIViewController, ConnectedViewControlle
         viewModel.dispose()
     }
 
-    func onRouterEvent(_ event: RouterEvent) { }
+    // MARK: - Events and actions
+    @objc
+    private func changeColor() {
+        viewModel.changeColor()
+    }
 }

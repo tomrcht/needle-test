@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Combine
 
-final class SimpleViewController: UIViewController, ConnectedViewController {
+final class SimpleViewController: UIViewController, ConnectedViewController, Routable {
     // MARK: - UI
     private lazy var navigationButton: UIButton = {
         let btn = UIButton()
@@ -47,7 +47,10 @@ final class SimpleViewController: UIViewController, ConnectedViewController {
         navigationButton.snp.makeConstraints { make in
             make.center.equalToSuperview()
         }
+    }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         bindViewModel()
     }
 
@@ -65,13 +68,13 @@ final class SimpleViewController: UIViewController, ConnectedViewController {
         viewModel.dispose()
     }
 
+    // MARK: - Events
     func onRouterEvent(_ event: RouterEvent) {
         if case let .push(vc) = event {
             navigationController?.pushViewController(vc, animated: true)
         }
     }
 
-    // MARK: - Actions
     @objc
     private func moveToSecondVC() {
         viewModel.pushSecond()

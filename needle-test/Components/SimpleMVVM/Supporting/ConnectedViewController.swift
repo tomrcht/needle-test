@@ -21,7 +21,10 @@ protocol ConnectedViewController {
     func bindViewModel()
     /// Teardown the current view controller
     func dispose()
+}
 
+/// Protocol that implements any routing capabilities inside a view controller
+protocol Routable {
     /// React to any router event dispatched by the view model
     func onRouterEvent(_ event: RouterEvent)
 }
