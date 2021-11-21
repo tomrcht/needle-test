@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Combine
 
-final class SimpleViewController: UIViewController, ConnectedViewController, Routable {
+final class SimpleViewController: UIViewController, ConnectedViewController, RoutableViewController {
     // MARK: - UI
     private lazy var navigationButton: UIButton = {
         let btn = UIButton()
