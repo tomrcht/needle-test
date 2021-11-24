@@ -17,19 +17,10 @@ final class SimpleViewModel: ConnectedViewModel, RoutingViewModel {
 
     init(builder: SimpleBuilder) {
         self.builder = builder
-        print("🟢 INIT \(self)")
-    }
-
-    deinit {
-        print("🔴 DEINIT \(self)")
     }
 
     func pushSecond() {
         let vc = builder.simpleSecondViewController
         router.send(.push(vc))
-    }
-
-    func dispose() {
-        bag.dispose()
     }
 }

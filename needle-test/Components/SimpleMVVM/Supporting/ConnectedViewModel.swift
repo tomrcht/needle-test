@@ -15,9 +15,6 @@ protocol ConnectedViewModel {
     var builder: AnyBuilder { get }
     /// Dispose bag that handles this view model's subscriptions
     var bag: Set<AnyCancellable> { get set }
-
-    /// Teardown the current view model
-    func dispose()
 }
 
 protocol RoutingViewModel {

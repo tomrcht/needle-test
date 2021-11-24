@@ -19,8 +19,6 @@ protocol ConnectedViewController {
 
     /// Bind the view controller and it's view model
     func bindViewModel()
-    /// Teardown the current view controller
-    func dispose()
 }
 
 /// Protocol that implements any routing capabilities inside a view controller

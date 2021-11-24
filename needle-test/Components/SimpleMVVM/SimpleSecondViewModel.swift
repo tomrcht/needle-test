@@ -9,8 +9,9 @@ import Foundation
 import Combine
 import UIKit
 
-final class SimpleSecondViewModel: ConnectedViewModel {
+final class SimpleSecondViewModel: ConnectedViewModel, RoutingViewModel {
     let currentColor = CurrentValueSubject<UIColor, Never>(.black)
+    let router = PassthroughSubject<RouterEvent, Never>()
 
     let builder: SimpleBuilder
     var bag = Set<AnyCancellable>()
@@ -31,10 +32,6 @@ final class SimpleSecondViewModel: ConnectedViewModel {
 
     deinit {
         print("🔴 DEINIT \(self)")
-    }
-
-    func dispose() {
-        bag.dispose()
     }
 
     func changeColor() {

@@ -27,16 +27,10 @@ final class SimpleViewController: UIViewController, ConnectedViewController, Rou
     init(viewModel: SimpleViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
-
-        print("🟢 INIT \(self)")
     }
 
     required init?(coder: NSCoder) {
         fatalError()
-    }
-
-    deinit {
-        print("🔴 DEINIT \(self)")
     }
 
     override func viewDidLoad() {
@@ -47,25 +41,14 @@ final class SimpleViewController: UIViewController, ConnectedViewController, Rou
         navigationButton.snp.makeConstraints { make in
             make.center.equalToSuperview()
         }
-    }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         bindViewModel()
     }
 
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        dispose()
-    }
-
     func bindViewModel() {
-        viewModel.router.sink(receiveValue: onRouterEvent).store(in: &bag)
-    }
-
-    func dispose() {
-        bag.dispose()
-        viewModel.dispose()
+        viewModel.router.sink { [unowned self] event in
+            self.onRouterEvent(event)
+        }.store(in: &bag)
     }
 
     // MARK: - Events

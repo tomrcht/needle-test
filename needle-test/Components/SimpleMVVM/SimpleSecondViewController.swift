@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-final class SimpleSecondViewController: UIViewController, ConnectedViewController {
+final class SimpleSecondViewController: UIViewController, ConnectedViewController, RoutableViewController {
     // MARK: - UI
     private lazy var colorButton: UIButton = {
         let btn = UIButton()
@@ -39,9 +39,7 @@ final class SimpleSecondViewController: UIViewController, ConnectedViewControlle
         fatalError()
     }
 
-    deinit {
-        print("🔴 DEINIT \(self)")
-    }
+    deinit { print("🔴 DEINIT \(self)") }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,30 +57,24 @@ final class SimpleSecondViewController: UIViewController, ConnectedViewControlle
             make.centerX.equalToSuperview()
             make.top.equalTo(colorButton.snp.bottom).offset(16)
         }
-    }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         bindViewModel()
     }
 
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        viewModel.dispose()
-    }
-
     func bindViewModel() {
+        viewModel.router.sink { [unowned self] event in
+            self.onRouterEvent(event)
+        }.store(in: &bag)
+
         viewModel.currentColor
             .sink { [unowned self] newColor in
-                print("newColor: \(newColor)")
                 self.square.backgroundColor = newColor
             }
             .store(in: &bag)
     }
 
-    func dispose() {
-        bag.dispose()
-        viewModel.dispose()
+    func onRouterEvent(_ event: RouterEvent) {
+        print("???")
     }
 
     // MARK: - Events and actions
