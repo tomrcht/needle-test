@@ -9,9 +9,8 @@ import Foundation
 import Combine
 import UIKit
 
-final class SimpleSecondViewModel: ConnectedViewModel, RoutingViewModel {
+final class SimpleSecondViewModel: ConnectedViewModel {
     let currentColor = CurrentValueSubject<UIColor, Never>(.black)
-    let router = PassthroughSubject<RouterEvent, Never>()
 
     let builder: SimpleBuilder
     var bag = Set<AnyCancellable>()

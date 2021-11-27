@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-final class SimpleSecondViewController: UIViewController, ConnectedViewController, RoutableViewController {
+final class SimpleSecondViewController: UIViewController, ConnectedViewController {
     // MARK: - UI
     private lazy var colorButton: UIButton = {
         let btn = UIButton()
@@ -62,19 +62,11 @@ final class SimpleSecondViewController: UIViewController, ConnectedViewControlle
     }
 
     func bindViewModel() {
-        viewModel.router.sink { [unowned self] event in
-            self.onRouterEvent(event)
-        }.store(in: &bag)
-
         viewModel.currentColor
             .sink { [unowned self] newColor in
                 self.square.backgroundColor = newColor
             }
             .store(in: &bag)
-    }
-
-    func onRouterEvent(_ event: RouterEvent) {
-        print("???")
     }
 
     // MARK: - Events and actions
