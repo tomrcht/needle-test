@@ -7,18 +7,22 @@
 
 import UIKit
 import SnapKit
+import Combine
 
-final class ImageViewController: UIViewController {
+final class ImageViewController: UIViewController, ConnectedViewController, RoutableViewController {
+    // MARK: - UI
     private lazy var imageView: UIImageView = {
         let imgView = UIImageView(image: UIImage(named: "error500")!)
         imgView.contentMode = .scaleAspectFit
         return imgView
     }()
 
-    private let imageBuilder: ImageBuilder
+    let viewModel: ImageViewModel
+    var bag = Set<AnyCancellable>()
 
-    init(imageBuilder: ImageBuilder) {
-        self.imageBuilder = imageBuilder
+    // MARK: - Lifecycle
+    init(viewModel: ImageViewModel) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -29,6 +33,7 @@ final class ImageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        bindViewModel()
     }
 
     private func setup() {
@@ -46,11 +51,25 @@ final class ImageViewController: UIViewController {
         imageView.isUserInteractionEnabled = true
     }
 
+    func bindViewModel() {
+        viewModel.router
+            .sink { [unowned self] event in
+                self.onRouterEvent(event)
+            }
+            .store(in: &bag)
+    }
+
+    func onRouterEvent(_ event: RouterEvent) {
+        if case let .push(vc) = event {
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+
     @objc
     private func onTap(_ sender: UITapGestureRecognizer) {
         let tapLocation = sender.location(in: imageView)
         if tapLocation.x < 150 && tapLocation.y < 200 {
-            navigationController?.pushViewController(imageBuilder.hiddenImageViewController, animated: true)
+            viewModel.showHiddenController()
         }
     }
 }

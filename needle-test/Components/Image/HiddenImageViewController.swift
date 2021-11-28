@@ -13,7 +13,6 @@ final class HiddenImageViewController: UIViewController {
 
     // MARK: - Lifecycle
     init(image: UIImage) {
-        print("INIT HiddenImageViewController")
         imageView = UIImageView(image: image)
         imageView.contentMode = .scaleAspectFit
 
@@ -36,16 +35,14 @@ final class HiddenImageViewController: UIViewController {
         imageView.snp.makeConstraints { make in
             make.top.bottom.leading.trailing.equalToSuperview()
         }
-        imageView.isUserInteractionEnabled = true
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(back))
         imageView.addGestureRecognizer(tapGesture)
+        imageView.isUserInteractionEnabled = true
     }
 
     @objc
     private func back() {
         navigationController?.popViewController(animated: true)
     }
-
-    deinit { print("DEINIT \(self)") }
 }

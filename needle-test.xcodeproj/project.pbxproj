@@ -12,6 +12,7 @@
 		E222BF932743EE320023EB61 /* SimpleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E222BF922743EE320023EB61 /* SimpleViewModel.swift */; };
 		E222BF952743EE420023EB61 /* SimpleSecondViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E222BF942743EE420023EB61 /* SimpleSecondViewModel.swift */; };
 		E222BF9727441B5F0023EB61 /* RouterEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E222BF9627441B5F0023EB61 /* RouterEvent.swift */; };
+		E27112CA27538FED002B6B5B /* ImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27112C927538FED002B6B5B /* ImageViewModel.swift */; };
 		E28D0FAC26AC181300D178D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28D0FAB26AC181300D178D7 /* AppDelegate.swift */; };
 		E28D0FAE26AC181300D178D7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28D0FAD26AC181300D178D7 /* SceneDelegate.swift */; };
 		E28D0FB026AC181300D178D7 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28D0FAF26AC181300D178D7 /* RootViewController.swift */; };
@@ -58,6 +59,7 @@
 		E222BF922743EE320023EB61 /* SimpleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleViewModel.swift; sourceTree = "<group>"; };
 		E222BF942743EE420023EB61 /* SimpleSecondViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleSecondViewModel.swift; sourceTree = "<group>"; };
 		E222BF9627441B5F0023EB61 /* RouterEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterEvent.swift; sourceTree = "<group>"; };
+		E27112C927538FED002B6B5B /* ImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewModel.swift; sourceTree = "<group>"; };
 		E28D0FA826AC181300D178D7 /* needle-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "needle-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E28D0FAB26AC181300D178D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E28D0FAD26AC181300D178D7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,7 +131,6 @@
 		E206C87E274193ED006AA00E /* SimpleMVVM */ = {
 			isa = PBXGroup;
 			children = (
-				E2A283D927429CEC00BB99D1 /* Supporting */,
 				E206C87F274193FD006AA00E /* SimpleComponent.swift */,
 				E2A283DA27429CF900BB99D1 /* SimpleViewController.swift */,
 				E222BF922743EE320023EB61 /* SimpleViewModel.swift */,
@@ -162,6 +163,7 @@
 		E28D0FAA26AC181300D178D7 /* needle-test */ = {
 			isa = PBXGroup;
 			children = (
+				E2A283D927429CEC00BB99D1 /* Supporting */,
 				92BA284B27454C0100267A5B /* Utils */,
 				E28D0FF826AC47BA00D178D7 /* Components */,
 				E28D0FEE26AC285700D178D7 /* Views */,
@@ -241,6 +243,7 @@
 			children = (
 				E28D0FF426AC383700D178D7 /* ImageComponent.swift */,
 				E28D0FE426AC19B100D178D7 /* ImageViewController.swift */,
+				E27112C927538FED002B6B5B /* ImageViewModel.swift */,
 				E28D0FF626AC3C5600D178D7 /* HiddenImageViewController.swift */,
 			);
 			path = Image;
@@ -415,6 +418,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E27112CA27538FED002B6B5B /* ImageViewModel.swift in Sources */,
 				E2A283E12742ACFB00BB99D1 /* SimpleSecondViewController.swift in Sources */,
 				E2A283DD2742A1EC00BB99D1 /* ConnectedViewController.swift in Sources */,
 				E2A283DB27429CF900BB99D1 /* SimpleViewController.swift in Sources */,
